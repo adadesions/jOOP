@@ -2,6 +2,7 @@ import oop.composites.Bone;
 import oop.composites.Human;
 import oop.composites.Organ;
 import oop.composites.Vessel;
+import oop.concepts.Jargon;
 import oop.gameEngine.Character;
 import oop.gameEngine.Support;
 import oop.gameEngine.Tank;
@@ -144,5 +145,6 @@ public class Main {
         );
 
         ada.think("Java Programming");
+        System.out.println(ada.getVein().getPressure());
     }
 }

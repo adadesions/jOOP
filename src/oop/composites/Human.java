@@ -1,7 +1,7 @@
 package oop.composites;
 
 public class Human {
-    private  String name;
+    private String name;
     private Organ brain;
     private Organ lungs;
     private Organ liver;
@@ -30,5 +30,13 @@ public class Human {
 
     public void pulse() {
         System.out.println("Pulse: " + this.vein.getPressure());
+    }
+
+    public Vessel getVein() {
+        return vein;
+    }
+
+    public void setVein(Vessel vein) {
+        this.vein = vein;
     }
 }
