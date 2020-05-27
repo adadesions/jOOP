@@ -8,8 +8,10 @@ import oop.gameEngine.Support;
 import oop.gameEngine.Tank;
 import oop.myAbstract.Circle;
 import oop.myInterface.InterCircle;
+import oop.myInterface.Shape;
 import oop.objects.*;
 import oop.patterns.ShapeFactory;
+import problems.Account;
 
 import java.util.concurrent.RecursiveAction;
 
@@ -151,9 +153,29 @@ public class Main {
         System.out.println(ada.getVein().getPressure());
     }
 
-    public static void main(String[] args) {
-        ShapeFactory sf = new ShapeFactory(10);
-        InterCircle c = sf.build("Circle");
+    public static void mainFactory(String[] args) {
+        ShapeFactory sf = new ShapeFactory(10, 3, 5);
+        Shape c = sf.build("Circle");
+        Shape t = sf.build("Triangle");
         c.printInfo();
+        t.printInfo();
+    }
+
+    public static void main(String[] args) {
+        Account a1 = new Account(10000);
+        System.out.println("Account a1");
+        System.out.println("Init balance: " + a1.getBalance());
+        a1.credit(3000);
+        a1.debit(5000);
+        a1.printAccountInfo();
+
+        Account a2 = new Account(30000);
+        System.out.println("Account a2");
+        System.out.println("Init balance: " + a2.getBalance());
+        a2.credit(50000);
+        a2.debit(90000);
+        a2.printAccountInfo();
+
+
     }
 }

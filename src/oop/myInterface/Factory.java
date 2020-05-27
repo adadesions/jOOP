@@ -1,6 +1,11 @@
 package oop.myInterface;
 
+enum ShapeTypes {
+    InterCircle,
+    Triangle
+}
+
 public interface Factory {
-    public InterCircle build(String type);
+    public Shape build(String type);
     public String getFactoryName();
 }

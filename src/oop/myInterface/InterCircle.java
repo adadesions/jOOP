@@ -13,8 +13,8 @@ public class InterCircle implements Shape, Circle {
     }
 
     public void printInfo() {
-        System.out.println("Class Circle: Radius = " + this.radius);
-        System.out.printf("Area = %.2f", this.area());
+        System.out.println("Class Circle: Radius = \n" + this.radius);
+        System.out.printf("Area = %.2f\n", this.area());
     }
 
     @Override

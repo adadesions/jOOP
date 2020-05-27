@@ -1,6 +1,8 @@
 package oop.objects;
 
-public class Triangle {
+import oop.myInterface.Shape;
+
+public class Triangle implements Shape {
    private double base;
    private double height;
 
@@ -12,6 +14,7 @@ public class Triangle {
       counter++;
    }
 
+   @Override
    public double area() {
       return  0.5 * this.base * this.height;
    }
@@ -20,6 +23,7 @@ public class Triangle {
       return 3 * base;
    }
 
+   @Override
    public void printInfo() {
       System.out.println("===========================");
       System.out.println("From Triangle class");

@@ -2,6 +2,7 @@ package oop.patterns;
 
 import oop.myInterface.Factory;
 import oop.myInterface.InterCircle;
+import oop.myInterface.Shape;
 import oop.objects.Triangle;
 
 public class ShapeFactory implements Factory {
@@ -27,7 +28,7 @@ public class ShapeFactory implements Factory {
     }
 
     @Override
-    public InterCircle build(String type) {
+    public Shape build(String type) {
         if (type.equals("Circle")) {
             InterCircle circle = new InterCircle(this.radius);
             counter++;
@@ -37,6 +38,8 @@ public class ShapeFactory implements Factory {
         else if (type.equals("Triangle")) {
             Triangle triangle = new Triangle(this.base, this.height);
             counter++;
+
+            return triangle;
         }
 
         return null;
