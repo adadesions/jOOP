@@ -8,8 +8,8 @@ public class Shape {
         this.color = color;
     }
 
-    public double area() {
-        return -1;
+    public double area() { // Signature
+        return -1;         // Method Body
     }
 
     public double perimeter() {

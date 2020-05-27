@@ -6,7 +6,10 @@ import oop.concepts.Jargon;
 import oop.gameEngine.Character;
 import oop.gameEngine.Support;
 import oop.gameEngine.Tank;
+import oop.myAbstract.Circle;
+import oop.myInterface.InterCircle;
 import oop.objects.*;
+import oop.patterns.ShapeFactory;
 
 import java.util.concurrent.RecursiveAction;
 
@@ -130,7 +133,7 @@ public class Main {
         System.out.println(scarletWitch.getClass());
     }
 
-    public static void main(String[] args) {
+    public static void mainComposite(String[] args) {
         // Composites!!
         Human ada = new Human(
                 "Ada",
@@ -146,5 +149,11 @@ public class Main {
 
         ada.think("Java Programming");
         System.out.println(ada.getVein().getPressure());
+    }
+
+    public static void main(String[] args) {
+        ShapeFactory sf = new ShapeFactory(10);
+        InterCircle c = sf.build("Circle");
+        c.printInfo();
     }
 }
