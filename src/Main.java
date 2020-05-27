@@ -12,6 +12,7 @@ import oop.myInterface.Shape;
 import oop.objects.*;
 import oop.patterns.ShapeFactory;
 import problems.Account;
+import problems.pr2.MyOwnAutoShop;
 
 import java.util.concurrent.RecursiveAction;
 
@@ -161,7 +162,7 @@ public class Main {
         t.printInfo();
     }
 
-    public static void main(String[] args) {
+    public static void mainPat(String[] args) {
         Account a1 = new Account(10000);
         System.out.println("Account a1");
         System.out.println("Init balance: " + a1.getBalance());
@@ -177,5 +178,9 @@ public class Main {
         a2.printAccountInfo();
 
 
+    }
+
+    public static void main(String[] args) {
+        MyOwnAutoShop.main();
     }
 }
