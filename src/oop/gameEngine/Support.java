@@ -26,22 +26,26 @@ public class Support extends Character {
 
     public void heal(Character c) {
         final int FACTOR = 2;
-        final int paidMana = 1;
+        final int costMana = 100;
 
         // TODO: Check enough mana!
+        if (this.mana >= costMana) {
+            int addHp = c.getHp() + (FACTOR * this.lv);
+            c.setHp(addHp);
+            this.spendMana(costMana);
 
-        int addHp = c.getHp() + (FACTOR * this.lv);
-        c.setHp(addHp);
-        this.useMana(paidMana);
-
-        System.out.printf("%s :: HP: %d hp up by %s\n", c.getCharName(), c.getPower(), this.charName);
+            System.out.printf("%s :: HP: %d hp up by %s\n", c.getCharName(), c.getPower(), this.charName);
+        }
+        else {
+            System.out.println("Not enough mana, please refill the mana first!");
+        }
     }
 
     public void powerUp(Character c) {
         final int FACTOR = 3;
         int addPower = c.getPower() + (int) (FACTOR * this.wisdom/2);
         c.setPower(addPower);
-        this.useMana(1);
+        this.spendMana(1);
 
         System.out.printf("%s :: power: %d power up by %s\n", c.getCharName(), c.getPower(), this.charName);
     }
@@ -50,14 +54,14 @@ public class Support extends Character {
         final double FACTOR = 1.5;
         int addDef = tanker.getDef() + (int) (FACTOR * this.wisdom / this.lv);
         tanker.setDef(addDef);
-        this.useMana(5);
+        this.spendMana(5);
 
         System.out.printf("%s :: def: %d def up by %s\n", tanker.getCharName(), tanker.getDef(), this.charName);
     }
 
     // DRY => Don't Repeat Yourself
-    public void useMana(int paid) {
-        this.mana -= paid;
+    public void spendMana(int cost) {
+        this.mana -= cost;
     }
 
     public void printInfo() {

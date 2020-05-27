@@ -1,3 +1,7 @@
+import oop.composites.Bone;
+import oop.composites.Human;
+import oop.composites.Organ;
+import oop.composites.Vessel;
 import oop.gameEngine.Character;
 import oop.gameEngine.Support;
 import oop.gameEngine.Tank;
@@ -103,7 +107,7 @@ public class Main {
         p1.calculate(9, "+");
     }
 
-    public static void main(String[] args) {
+    public static void mainGame(String[] args) {
         Character deadpool = new Character("DeadPool", 50, 100, 5);
         Tank hulk = new Tank("Hulk", 150, 40, 3000, 100);
         Support scarletWitch = new Support("Scarlet Witch", 100);
@@ -122,5 +126,23 @@ public class Main {
         scarletWitch.defUp(hulk);
         scarletWitch.printInfo();
 
+        System.out.println(scarletWitch.getClass());
+    }
+
+    public static void main(String[] args) {
+        // Composites!!
+        Human ada = new Human(
+                "Ada",
+                new Organ("Brain", "Head", 120),
+                new Organ("Lung", "Chest", 60),
+                new Organ("Liver", "Middle", 60),
+                new Organ("Heart", "Chest", 100),
+                new Vessel("Pulmonary vain", 80, false),
+                new Vessel("Pulmonary artery", 40, true),
+                new Bone(),
+                new Bone()
+        );
+
+        ada.think("Java Programming");
     }
 }

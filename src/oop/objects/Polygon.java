@@ -43,5 +43,10 @@ public class Polygon extends Shape{
     public void calculate(int num, String operator) {
         System.out.printf("Calculated: %s, %d\n", operator, num);
     }
+
+    @Override
+    public double area() {
+        return 0;
+    }
 }
 
