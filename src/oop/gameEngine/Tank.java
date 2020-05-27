@@ -20,6 +20,14 @@ public class Tank extends Character{
         // 50 - 100 = -50(
         int calDamage = damage - this.def;
         this.hp = this.hp - calDamage;
-        System.out.printf("HP: %d, Damage: %d\n", this.hp, calDamage);
+        super.printAttacked(calDamage);
+    }
+
+    public int getDef() {
+        return def;
+    }
+
+    public void setDef(int def) {
+        this.def = def;
     }
 }

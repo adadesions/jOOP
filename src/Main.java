@@ -110,10 +110,17 @@ public class Main {
 
         deadpool.attacked(hulk.getPower());
         hulk.attacked(deadpool.getHp());
+
         scarletWitch.heal(deadpool);
+        scarletWitch.printInfo();
 
-        System.out.println("Deadpool After heal!, HP: " + deadpool.getHp());
+        scarletWitch.powerUp(deadpool);
+        scarletWitch.printInfo();
 
+        hulk.attacked(deadpool.getPower());
+
+        scarletWitch.defUp(hulk);
+        scarletWitch.printInfo();
 
     }
 }

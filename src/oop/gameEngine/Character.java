@@ -15,7 +15,11 @@ public class Character {
 
     public void attacked(int damage) {
         this.hp -= damage;
-        System.out.printf("HP: %d, Damage: %d\n", this.hp, damage);
+        this.printAttacked(damage);
+    }
+
+    public void printAttacked(int damage) {
+        System.out.printf("%s :: HP: %d, Damage: %d\n", this.charName, this.hp, damage);
     }
 
     public String getCharName() {
